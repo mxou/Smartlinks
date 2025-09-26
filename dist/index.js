@@ -1,4 +1,4 @@
-import { getSites, removeSite } from "./storage.js";
+import { getSites, removeSite, getFaviconUrl } from "./storage.js";
 const grid = document.querySelector(".grid");
 function renderSites() {
     const sites = getSites();
@@ -6,8 +6,9 @@ function renderSites() {
     sites.forEach((site) => {
         const card = document.createElement("div");
         card.className = "flex flex-col justify-center items-center bg-white p-2.5 gap-2 shadow-md rounded-sm";
+        const imgUrl = getFaviconUrl(site.url);
         card.innerHTML = `
-      <img src="./assets/media/tempimg.webp" alt="Image du site" class="w-60 h-auto" />
+      <img src="${imgUrl}" alt="Favicon du site ${site.name}" class="w-60 h-auto" />
       <p class="text-xl font-bold">${site.name}</p>
       <p class="text-gray-600">${site.category}</p>
       <div class="flex flex-row gap-3 w-full">

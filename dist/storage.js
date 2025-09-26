@@ -15,4 +15,13 @@ export function removeSite(id) {
     const sites = getSites().filter((site) => site.id !== id);
     saveSites(sites);
 }
+export function getFaviconUrl(iconUrl) {
+    try {
+        const domain = new URL(iconUrl).hostname;
+        return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    }
+    catch (_a) {
+        return "./assets/media/tempimg.webp";
+    }
+}
 //# sourceMappingURL=storage.js.map

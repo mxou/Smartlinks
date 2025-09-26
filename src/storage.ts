@@ -21,3 +21,12 @@ export function removeSite(id: string): void {
   const sites = getSites().filter((site) => site.id !== id);
   saveSites(sites);
 }
+
+export function getFaviconUrl(iconUrl: string): string {
+  try {
+    const domain = new URL(iconUrl).hostname;
+    return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+  } catch {
+    return "./assets/media/tempimg.webp";
+  }
+}

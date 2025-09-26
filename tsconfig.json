@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* === FICHIERS GÉNÉRÉS === */
+    // "rootDir": "./src",
+    "outDir": "./dist",
+
+    /* === ENVIRONNEMENT === */
+    "target": "ES6", // syntaxe moderne mais compatible navigateurs récents
+    "module": "ESNext", // permet d'utiliser import/export natifs
+    "moduleResolution": "Node", // résolution des modules façon Node
+    "lib": ["ESNext", "DOM"], // accès aux API navigateur (DOM, localStorage, fetch...)
+
+    /* === IMPORTS / EXPORTS === */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* === TYPESCRIPT STRICT === */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* === SORTIE === */
+    "sourceMap": true, // génère .map pour debugger dans le navigateur
+    "declaration": false, // pas besoin des .d.ts pour ton projet
+    "declarationMap": false,
+
+    /* === OPTIONS SUPPLÉMENTAIRES === */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

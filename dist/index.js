@@ -19,7 +19,7 @@ function renderSites() {
     });
     document.querySelectorAll(".delete").forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            const id = e.target.dataset.id;
+            const id = e.target.dataset.id; // En gros pour chaque btn, on écoute le click de CE btn en promettant qu'on a bien un data-id
             removeSite(id);
             renderSites();
         });

@@ -10,6 +10,9 @@ form.addEventListener("submit", (e) => {
   const url = (document.querySelector("#site-url") as HTMLInputElement).value;
   const category = (document.querySelector("#category") as HTMLSelectElement).value;
 
+  //   Les () servent a caster l'element avant d'acceder aux values
+  // Caster veut dire "fait comme si cette variable était de x type" pour acceder au values
+
   const newSite: Site = {
     id: crypto.randomUUID(),
     name,

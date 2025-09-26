@@ -5,6 +5,8 @@ form.addEventListener("submit", (e) => {
     const name = document.querySelector("#site-name").value;
     const url = document.querySelector("#site-url").value;
     const category = document.querySelector("#category").value;
+    //   Les () servent a caster l'element avant d'acceder aux values
+    // Caster veut dire "fait comme si cette variable était de x type" pour acceder au values
     const newSite = {
         id: crypto.randomUUID(),
         name,

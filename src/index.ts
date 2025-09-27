@@ -1,13 +1,24 @@
 import { getSites, removeSite, getFaviconUrl } from "./storage.js";
 import type { Site } from "./types.js";
 
+type Filter = "Tout" | "CSS" | "Icônes" | "React" | "Outils" | "Design";
+let currentFilter = "Tout";
+
 const grid = document.querySelector(".grid") as HTMLDivElement;
 
 function renderSites() {
   const sites: Site[] = getSites();
   grid.innerHTML = "";
 
-  sites.forEach((site) => {
+  let filteredSites: Site[];
+
+  if (currentFilter === "Tout") {
+    filteredSites = sites;
+  } else {
+    filteredSites = sites.filter((site) => site.category === currentFilter);
+  }
+
+  filteredSites.forEach((site) => {
     const card = document.createElement("div");
     card.className = "flex flex-col justify-center items-center bg-white p-2.5 gap-2 shadow-md rounded-sm";
 
@@ -32,6 +43,36 @@ function renderSites() {
       removeSite(id);
       renderSites();
     });
+  });
+
+  document.querySelector("#filter_btn_tout")?.addEventListener("click", () => {
+    currentFilter = "Tout";
+    renderSites();
+  });
+
+  document.querySelector("#filter_btn_css")?.addEventListener("click", () => {
+    currentFilter = "CSS";
+    renderSites();
+  });
+
+  document.querySelector("#filter_btn_icones")?.addEventListener("click", () => {
+    currentFilter = "Icônes";
+    renderSites();
+  });
+
+  document.querySelector("#filter_btn_outils")?.addEventListener("click", () => {
+    currentFilter = "Outils";
+    renderSites();
+  });
+
+  document.querySelector("#filter_btn_react")?.addEventListener("click", () => {
+    currentFilter = "React";
+    renderSites();
+  });
+
+  document.querySelector("#filter_btn_design")?.addEventListener("click", () => {
+    currentFilter = "Design";
+    renderSites();
   });
 }
 

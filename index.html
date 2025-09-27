@@ -19,8 +19,33 @@
       <input type="search" placeholder="Chercher un site..." name="" id="" class="border-1 p-1.5 rounded-md" />
     </header>
     <section class="pt-24 pl-8 pr-8">
-      <h2 class="text-4xl font-bold">Sites web utiles</h2>
-      <h4 class="text-[#6B7280] mb-3.5">Collection des sites utiles pour le dev</h4>
+      <div class="border-b border-gray-300 mb-6">
+        <h2 class="text-4xl font-bold">Sites web utiles</h2>
+        <h4 class="text-[#6B7280] mb-3.5">Collection des sites utiles pour le dev</h4>
+        <div class="flex flex-row gap-3 items-center mb-3">
+          <p>Filtrer par :</p>
+          <div class="flex flex-row gap-2">
+            <button id="filter_btn_tout" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              Tout
+            </button>
+            <button id="filter_btn_icones" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              Icônes
+            </button>
+            <button id="filter_btn_css" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              CSS
+            </button>
+            <button id="filter_btn_react" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              React
+            </button>
+            <button id="filter_btn_design" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              Design
+            </button>
+            <button id="filter_btn_outils" class="px-2 py-1 bg-gray-300 rounded-sm border cursor-pointer border-gray-300 hover:border-blue-400 transition">
+              Outils
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="grid grid-cols-5 grid-rows-2 gap-10">
         <!-- <div class="flex flex-col justify-center items-center bg-white p-2.5 gap-2 shadow-md rounded-sm">
           <img src="./assets/media/tempimg.webp" alt="Image du site" class="w-60 h-auto" />
